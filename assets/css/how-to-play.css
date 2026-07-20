@@ -1,0 +1,365 @@
+.guide-hero {
+  padding-bottom: 2rem;
+}
+
+.guide-hero-layout,
+.guide-cta-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.guide-hero h1,
+.guide-heading h2,
+.guide-cta h2 {
+  max-width: 42rem;
+}
+
+.how-to-play-intro {
+  max-width: 43rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.guide-section {
+  padding: 2.5rem 0;
+}
+
+.guide-heading {
+  max-width: 42rem;
+  margin-bottom: 2rem;
+}
+
+.guide-heading h2 {
+  margin-top: 0.4rem;
+}
+
+.guide-heading > p:last-child {
+  margin-top: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.how-to-play {
+  position: relative;
+}
+
+.how-to-play .step-grid {
+  gap: 1rem;
+}
+
+.how-to-play .step-grid li {
+  position: relative;
+  min-height: 17rem;
+  padding: 1.4rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-medium);
+  background: linear-gradient(155deg, rgba(255, 250, 242, 0.96), rgba(241, 229, 211, 0.72));
+  box-shadow: 0 0.9rem 2.5rem rgba(74, 50, 30, 0.08);
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.how-to-play .step-grid li::after {
+  position: absolute;
+  right: -2.5rem;
+  bottom: -3rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background: rgba(165, 82, 54, 0.07);
+  content: '';
+}
+
+.how-to-play .step-grid li:hover,
+.difficulty-card:hover,
+.mode-guide-card:hover {
+  border-color: var(--line-strong);
+  box-shadow: 0 1.2rem 3rem rgba(74, 50, 30, 0.12);
+  transform: translateY(-3px);
+}
+
+.step-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.how-to-play .step-number {
+  margin: 0;
+  color: var(--cyan);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.step-icon,
+.mode-guide-icon,
+.difficulty-symbol {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--cyan);
+  background: rgba(255, 250, 242, 0.86);
+  font-weight: 900;
+}
+
+.step-icon {
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.how-to-play .step-grid h3,
+.how-to-play .step-grid p,
+.step-note,
+.difficulty-pills {
+  position: relative;
+  z-index: 1;
+}
+
+.how-to-play .step-grid h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.18rem;
+  letter-spacing: -0.02em;
+}
+
+.how-to-play .step-grid p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.step-note {
+  display: inline-flex;
+  margin-top: 1.25rem;
+  padding: 0.42rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--cyan);
+  background: rgba(255, 250, 242, 0.72);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.difficulty-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1.25rem;
+}
+
+.difficulty-pills span {
+  padding: 0.42rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255, 250, 242, 0.72);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.difficulty-pills span:first-child {
+  color: var(--green);
+}
+
+.difficulty-pills span:last-child {
+  color: var(--cyan);
+}
+
+.difficulty-grid,
+.mode-guide-grid,
+.score-rules {
+  display: grid;
+  gap: 1rem;
+}
+
+.difficulty-card,
+.mode-guide-card,
+.rule-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-medium);
+  background: rgba(255, 250, 242, 0.74);
+  box-shadow: 0 0.8rem 2rem rgba(74, 50, 30, 0.06);
+}
+
+.difficulty-card,
+.mode-guide-card {
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.difficulty-card {
+  padding: 1.35rem;
+}
+
+.difficulty-card-header {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.difficulty-symbol {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+}
+
+.card-kicker {
+  margin-bottom: 0.15rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.difficulty-card h3,
+.mode-guide-card h3,
+.rule-card h3 {
+  margin-bottom: 0.45rem;
+}
+
+.difficulty-card > p,
+.mode-guide-card p,
+.rule-card p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.difficulty-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.55rem;
+  margin-bottom: 1.1rem;
+}
+
+.difficulty-stats span {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.7rem 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  color: var(--muted);
+  background: rgba(255, 250, 242, 0.76);
+  font-size: 0.67rem;
+  text-align: center;
+}
+
+.difficulty-stats strong {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.difficulty-easy .difficulty-symbol {
+  color: var(--green);
+}
+
+.difficulty-hard .difficulty-symbol {
+  color: var(--cyan);
+}
+
+.score-layout {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.score-heading {
+  margin-bottom: 0;
+}
+
+.rule-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.15rem;
+}
+
+.rule-value {
+  display: grid;
+  min-width: 3.2rem;
+  height: 3.2rem;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  color: var(--cyan);
+  background: rgba(255, 250, 242, 0.88);
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.mode-guide-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mode-guide-card {
+  padding: 1.2rem;
+}
+
+.mode-guide-icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-bottom: 1rem;
+  border-radius: 0.8rem;
+  font-size: 0.85rem;
+}
+
+.guide-cta {
+  padding: 2.5rem 0 4rem;
+}
+
+.guide-cta-content {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-large);
+  background: linear-gradient(135deg, rgba(255, 250, 242, 0.96), rgba(239, 224, 203, 0.82));
+  box-shadow: 0 1rem 3rem rgba(74, 50, 30, 0.08);
+}
+
+.guide-cta h2 {
+  margin-top: 0.4rem;
+  font-size: clamp(1.45rem, 4vw, 2.2rem);
+}
+
+@media (min-width: 48rem) {
+  .guide-hero-layout,
+  .guide-cta-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .difficulty-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .score-layout {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+  }
+
+  .score-rules {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mode-guide-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

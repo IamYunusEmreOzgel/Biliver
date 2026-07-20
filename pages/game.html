@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f0e4" />
+    <meta name="description" content="Biliver bilgi oyunu." />
+    <title>Oyun | Biliver</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/brand/logo-mark.svg" />
+    <link rel="stylesheet" href="../assets/css/style.css?v=20260717-3" />
+    <link rel="stylesheet" href="../assets/css/game.css?v=20260717-4" />
+  </head>
+
+  <body class="game-page">
+    <a class="skip-link" href="#game-content">Oyuna geç</a>
+
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="brand" href="../index.html" aria-label="Biliver ana sayfa">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="../assets/images/brand/logo-mark.svg" alt="" />
+          </span>
+          <span class="brand-name">Biliver</span>
+        </a>
+
+        <a class="header-label" href="./modes.html">Oyun Modları</a>
+      </div>
+    </header>
+
+    <main id="game-content" class="game-main">
+      <div class="container">
+        <section class="game-panel" aria-live="polite">
+          <div id="setup-view" hidden>
+            <div class="setup-intro">
+              <p class="eyebrow">Oyun modu</p>
+              <h1 id="mode-title">Plaka Kodları</h1>
+              <p id="mode-description" class="game-description"></p>
+            </div>
+
+            <div class="portal-stage" aria-hidden="true">
+              <div class="knowledge-portal">
+                <span class="portal-orbit portal-orbit-one"></span>
+                <span class="portal-orbit portal-orbit-two"></span>
+                <span class="portal-orbit portal-orbit-three"></span>
+                <span class="portal-core">?</span>
+              </div>
+              <span class="portal-caption">Biliver bilgi portalı</span>
+            </div>
+
+            <div class="setup-controls">
+              <div class="difficulty-heading">
+                <h2>Zorluk seviyeni seç</h2>
+                <p>Seviye yükseldikçe seçenek sayısı artar.</p>
+              </div>
+
+              <div class="difficulty-grid">
+                <button
+                  type="button"
+                  class="difficulty-card difficulty-easy"
+                  data-difficulty="easy"
+                  aria-pressed="false"
+                >
+                  <span class="difficulty-copy">
+                    <strong>Kolay</strong>
+                    <span class="difficulty-details" role="list">
+                      <span role="listitem">2 seçenek</span>
+                      <span role="listitem">15 saniye</span>
+                    </span>
+                    <small>Yeni başlayanlar için</small>
+                  </span>
+                  <span class="difficulty-stars" aria-hidden="true">★</span>
+                </button>
+                <button
+                  type="button"
+                  class="difficulty-card difficulty-medium"
+                  data-difficulty="medium"
+                  aria-pressed="false"
+                >
+                  <span class="difficulty-copy">
+                    <strong>Orta</strong>
+                    <span class="difficulty-details" role="list">
+                      <span role="listitem">3 seçenek</span>
+                      <span role="listitem">10 saniye</span>
+                    </span>
+                    <small>Dengeli oyun</small>
+                  </span>
+                  <span class="difficulty-stars" aria-hidden="true">★★</span>
+                </button>
+                <button
+                  type="button"
+                  class="difficulty-card difficulty-hard"
+                  data-difficulty="hard"
+                  aria-pressed="false"
+                >
+                  <span class="difficulty-copy">
+                    <strong>Zor</strong>
+                    <span class="difficulty-details" role="list">
+                      <span role="listitem">4 seçenek</span>
+                      <span role="listitem">5 saniye</span>
+                    </span>
+                    <small>Kendine güvenenler için</small>
+                  </span>
+                  <span class="difficulty-stars" aria-hidden="true">★★★</span>
+                </button>
+              </div>
+
+              <div class="setup-actions">
+                <p id="selection-hint" role="status">Başlamak için bir seviye seç.</p>
+                <button
+                  id="start-button"
+                  class="button button-primary start-button"
+                  type="button"
+                  disabled
+                >
+                  Oyuna Başla
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="question-view" hidden>
+            <div class="game-hud">
+              <div class="hud-context">
+                <span id="question-mode" class="hud-mode"></span>
+                <span id="difficulty-label" class="hud-level"></span>
+              </div>
+
+              <div class="hud-stat hud-question">
+                <span>Soru</span>
+                <strong id="question-counter"></strong>
+              </div>
+
+              <div class="hud-stat hud-score">
+                <span>Puan</span>
+                <strong id="live-score">0</strong>
+              </div>
+
+              <div id="question-timer" class="question-timer" role="timer">
+                <div class="timer-content">
+                  <strong id="timer-text">0</strong>
+                  <span>saniye</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="game-progress"
+              class="game-progress"
+              role="progressbar"
+              aria-label="Oyun ilerlemesi"
+              aria-valuemin="1"
+            >
+              <span id="game-progress-value"></span>
+            </div>
+
+            <p id="streak-badge" class="streak-badge" role="status" hidden></p>
+
+            <div class="question-card">
+              <p class="question-label">Soru</p>
+              <div id="question-visual" class="question-visual" hidden>
+                <img id="question-image" alt="" />
+              </div>
+              <h1 id="question-text" class="question-text"></h1>
+            </div>
+
+            <div id="answer-list" class="answer-list"></div>
+
+            <div class="question-footer">
+              <p id="feedback" class="feedback" role="status"></p>
+              <button id="next-button" class="button button-primary" type="button" disabled>
+                Sonraki Soru
+              </button>
+            </div>
+          </div>
+
+          <div id="result-view" class="result-view" hidden>
+            <p class="eyebrow">Oyun tamamlandı</p>
+            <h1>Tur sonucu</h1>
+            <p id="result-message" class="game-description"></p>
+
+            <dl class="result-grid">
+              <div>
+                <dt>Doğru</dt>
+                <dd id="correct-result">0</dd>
+              </div>
+              <div>
+                <dt>Yanlış</dt>
+                <dd id="wrong-result">0</dd>
+              </div>
+              <div>
+                <dt>Puan</dt>
+                <dd id="score-result">0</dd>
+              </div>
+            </dl>
+
+            <div class="result-actions">
+              <button id="restart-button" class="button button-primary" type="button">
+                Tekrar Oyna
+              </button>
+              <a class="button button-secondary" href="./modes.html">Modlara Dön</a>
+            </div>
+          </div>
+
+          <div id="error-view" class="result-view" hidden>
+            <p class="eyebrow">Bir sorun oluştu</p>
+            <h1>Oyun modu bulunamadı</h1>
+            <p class="game-description">Geçerli bir oyun seçmek için oyun modlarına dönebilirsin.</p>
+            <a class="button button-primary" href="./modes.html">Oyun Modlarına Dön</a>
+          </div>
+
+          <noscript>Bu oyunu çalıştırmak için JavaScript'i etkinleştirmen gerekiyor.</noscript>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="../assets/js/pages/game.js?v=20260717-4"></script>
+  </body>
+</html>
